@@ -62,7 +62,6 @@ package.json
 
 ```json
 {
-  // ...
   "lightpress": {
     "inputPath": "contents",
     "outputPath": "src/contents",
@@ -72,7 +71,7 @@ package.json
 }
 ```
 
-### Vue Setting
+### Vue example
 
 Import markdown files in the app and parse them to save on data size.
 

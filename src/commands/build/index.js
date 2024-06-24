@@ -11,11 +11,11 @@ export default class BuildCommand extends Command {
 	 */
 	async run(event) {
 		const {options} = event;
-		if (options.includes('-html')) {
+		if (options.includes('-html') || options.includes('--html')) {
 			event.config.html = true;
 		}
 
-		if (options.includes('-markdown')) {
+		if (options.includes('-markdown') || options.includes('--markdown')) {
 			event.config.markdown = true;
 		}
 

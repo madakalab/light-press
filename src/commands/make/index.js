@@ -15,7 +15,7 @@ export default class MakeCommand extends Command {
 		const [contentType = 'articles', ...titles] = options;
 		const inputPath = path.join(projectRoot, config.inputPath);
 		const contentTypePath = path.join(inputPath, contentType);
-		const title = titles.join(' ');
+		const title = titles.join(' ') || 'Untitled';
 
 		const customStubPath = path.join(inputPath, `${contentType}.stub`);
 		const isCustomStubExists = await fs.access(customStubPath).then(() => true).catch(() => false);
@@ -42,6 +42,11 @@ export default class MakeCommand extends Command {
 		}
 
 		const filePath = path.join(contentTypePath, `${id}.md`);
+		const shortPath = path.relative(projectRoot, filePath);
 		await fs.writeFile(filePath, stub);
+
+		console.log(`Create Successfull!
+✅ ${shortPath}
+`);
 	}
 }
