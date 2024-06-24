@@ -16,7 +16,7 @@ npx lightpress
 
 ## Make contents
 
-Generates a Markdown file to the inputPath.
+Generates a Markdown file to the config.inputPath.
 
 ```bash
 npx lightpress make <content-type> <title>
@@ -52,7 +52,7 @@ npx lightpress build <options>
 
 Writes HTML into the data. This will increase the file size, but allows for easy display of content.
 
-#### -markdow
+#### -markdown
 
 Writes markdown data into the data. If you use this option, consider directly importing the markdown file as well.
 
@@ -62,7 +62,7 @@ package.json
 
 ```json
 {
-  ...
+  // ...
   "lightpress": {
     "inputPath": "contents",
     "outputPath": "src/contents",
