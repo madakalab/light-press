@@ -12,9 +12,10 @@ export default class MakeCommand extends Command {
 	 */
 	async run(event) {
 		const {projectRoot, options, config} = event;
-		const [contentType = 'articles', title = 'Untitled'] = options;
+		const [contentType = 'articles', ...titles] = options;
 		const inputPath = path.join(projectRoot, config.inputPath);
 		const contentTypePath = path.join(inputPath, contentType);
+		const title = titles.join(' ');
 
 		const customStubPath = path.join(inputPath, `${contentType}.stub`);
 		const isCustomStubExists = await fs.access(customStubPath).then(() => true).catch(() => false);
@@ -25,7 +26,7 @@ export default class MakeCommand extends Command {
 
 		await fs.mkdir(contentTypePath, {recursive: true});
 		// もし同じタイトルのファイルが存在する場合は、-2, -3, ... というように連番をつける
-		const titleKebabCase = _.kebabCase(title);
+		const titleKebabCase = _.kebabCase(title).replaceAll('/', '_');
 		let id = titleKebabCase;
 		let i = 2;
 		// eslint-disable-next-line no-constant-condition

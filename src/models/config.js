@@ -7,6 +7,8 @@ export class Config {
 	 */
 	inputPath = 'contents';
 	outputPath = 'src/contents';
+	html = true;
+	markdown = false;
 
 	/**
 	 * @param {string} projectRoot
@@ -22,8 +24,10 @@ export class Config {
 	/**
 	 * @param {Config}
 	 */
-	constructor({inputPath = 'contents', outputPath = 'src/contents'}) {
+	constructor({inputPath = 'contents', outputPath = 'src/contents', html = true, markdown = false}) {
 		this.inputPath = inputPath;
 		this.outputPath = outputPath;
+		this.html = html;
+		this.markdown = markdown;
 	}
 }

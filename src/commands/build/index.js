@@ -10,6 +10,15 @@ export default class BuildCommand extends Command {
 	 * @param {import('../../models/index.js').Event} event
 	 */
 	async run(event) {
+		const {options} = event;
+		if (options.includes('-html')) {
+			event.config.html = true;
+		}
+
+		if (options.includes('-markdown')) {
+			event.config.markdown = true;
+		}
+
 		const contentTypes = await this.getContentTypes(event);
 		const artifactPathes = await Promise.all(contentTypes.map(async contentType => {
 			const metaDatas = await this.makeMetaDatas(event, contentType);
