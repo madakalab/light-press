@@ -11,7 +11,7 @@ Usage:
   $ lightpress <command> [options]
 
 Commands:
-	- make <content-type> <title>
+  - make <content-type> <title>
   - build
   - help
   - version
