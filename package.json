@@ -1,0 +1,51 @@
+{
+  "name": "@madakalab/lightpress",
+  "version": "0.0.0",
+  "description": "Static Contents Generator",
+  "type": "module",
+  "bin": {
+    "lightpress": "src/main.js"
+  },
+  "scripts": {
+    "lightpress": "node src/main.js",
+    "test": "xo && ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madakalab/lightpress.git"
+  },
+  "keywords": [
+    "lightpress",
+    "madakalab",
+    "madakaheri",
+    "cms",
+    "blog"
+  ],
+  "author": "Madaka Heri <madakaheri@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/madakalab/lightpress/issues"
+  },
+  "homepage": "https://github.com/madakalab/lightpress#readme",
+  "dependencies": {
+    "jsdom": "^24.1.0",
+    "lodash": "^4.17.21",
+    "marked": "^13.0.0",
+    "parse-md": "^3.0.3"
+  },
+  "devDependencies": {
+    "ava": "^6.1.3",
+    "xo": "^0.58.0"
+  },
+  "lightpress": {
+    "inputPath": "__tests__/input",
+    "outputPath": "__tests__/output",
+    "html": false,
+    "markdown": false
+  },
+  "xo": {
+    "rules": {
+      "capitalized-comments": "off"
+    }
+  }
+}
