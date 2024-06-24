@@ -73,7 +73,7 @@ export default class BuildCommand extends Command {
 		}));
 		return metaDatas
 			.filter(metaData => metaData.public)
-			.sort((a, b) => a.time - b.time);
+			.sort((a, b) => new Date(b.time) - new Date(a.time));
 	}
 
 	/**
